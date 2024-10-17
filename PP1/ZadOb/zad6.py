@@ -47,6 +47,10 @@ print(f"{n} * {m} = {n * m}")
 if n * m == 10:
     print("Yay!")
 
-print(f"{n} / {m} = {n / m}")
+if m == 0:
+    print("Nie mozna dzielic przez 0!")
+else:
+    print(f"{n} / {m} = {n / m}")
+    
 print(f"{n}^2 = {n ** 2}, {m}^2 = {m ** 2}")
 print(f"sqrt({n}) = {n ** 0.5}, sqrt({m}) = {m ** 0.5}")
