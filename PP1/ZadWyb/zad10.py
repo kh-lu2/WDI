@@ -1,4 +1,7 @@
-a, b, c = map(int, input("Wprowadz trzy liczby calkowite: ").split())
+print("Wprowadz trzy liczby calkowite oddzielajac klawiszem enter: ")
+a = int(input())
+b = int(input())
+c = int(input())
 
 if not isinstance(a, int) or not isinstance(b, int) or not isinstance(c, int):
     print("Liczby nie sa calkowite")
