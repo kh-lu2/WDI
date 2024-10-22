@@ -1,4 +1,4 @@
-print("Wprowadz trzy liczby calkowite oddzielajac klawiszem enter: ")
+print("Wprowadz trzy liczby calkowite oddzielajac je klawiszem enter: ")
 a = int(input())
 b = int(input())
 c = int(input())
