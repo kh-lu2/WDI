@@ -1,10 +1,11 @@
-s = ''.join(input().split('0')[1:-1])
-print(s)
+inp = ''.join(input().split('0')[1:-1])
+print(inp)
 
 ascii = set()
-for i in range(0, len(s)):
-    print(s[i], ord(s[i]))
-    ascii.add(ord(s[i]))
+for character in inp:
+    ascii_val = ord(character)
+    print(character, ascii_val)
+    ascii.add(ascii_val)
 
 if (len(ascii) < 5):
     print("Za malo roznych znakow")
