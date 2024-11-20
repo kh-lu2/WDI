@@ -10,8 +10,7 @@ def read_file (filename):
 
 def compare(user_codes, flag):
     inp = input()
-    user_res = ''
-    pyt_res = ''
+    user_res, pyt_res = '', ''
     for char in inp:
         user_res = user_res + str(user_codes[char]) + " "
         pyt_res = pyt_res + str(ord(char)) + " "
