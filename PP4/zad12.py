@@ -15,10 +15,10 @@ def compare(user_codes, flag):
         user_res = user_res + str(user_codes[char]) + " "
         pyt_res = pyt_res + str(ord(char)) + " "
 
-    if (flag == "check"):
+    if flag == "check":
         print("okej" if user_res == pyt_res else "zle kody")
         return
-    # flag == "print"
+    #if flag == "print"
     print(f"{user_res}\n{pyt_res}")
 
 def manage(filename, flag):

@@ -17,7 +17,7 @@ class Point:
         return hash((self.x, self.y))
 
     @staticmethod
-    def rand_P(lower = -5, upper = 5):
+    def rand_P(lower = -2, upper = 2):
         return Point(*(random.randint(lower, upper) for _ in range(2)))
     
     @staticmethod
@@ -37,13 +37,11 @@ class Point:
     def empty_sq(A, B, data):
         sum = 0
         for point in data:
-            if point == A or point == B:
-                continue
             if Point.is_in_sq(point, A, B):
                 sum = sum + 1
-        return sum == 2
+        return sum == 4
 
-data_size = 10
+data_size = 15
 data = list({Point.rand_P() for _ in range(data_size)})
 data_size = len(data)
 
