@@ -20,6 +20,8 @@ class Point:
     def rand_P(lower = -2, upper = 2):
         return Point(*(random.randint(lower, upper) for _ in range(2)))
     
+    
+class Solution:
     @staticmethod
     def can_form_sq(A, B):
         return B.x - A.x == B.y - A.y
@@ -37,35 +39,32 @@ class Point:
     def empty_sq(A, B, data):
         sum = 0
         for point in data:
-            if Point.is_in_sq(point, A, B):
+            if Solution.is_in_sq(point, A, B):
                 sum = sum + 1
         return sum == 4
-
-data_size = 15
-data = list({Point.rand_P() for _ in range(data_size)})
-data_size = len(data)
-
-# tu istnieje 
-# data = [Point(0, 0), Point(1, 1), Point(-4, 8), Point(-2, -5), Point(0, -5), Point(0, -3), Point(-2, -3)]
-
-# tu nie istnieje
-# data = [Point(0, 0), Point(1, 1), Point(-2, -4), Point(-2, -5), Point(0, -5), Point(0, -3), Point(-2, -3)]
-
-print(*data)
-data_size = len(data)
-found = 0
-
-for a in data:
-    for b in data:
-        if a == b:
-            continue
-        if not Point.can_form_sq(a, b):
-            continue
-        if not Point.exists_sq(a, b, data):
-            continue
-        if not Point.empty_sq(a, b, data):
-            continue
     
-        found = 1
+    @staticmethod
+    def main():
+        data_size = 10
+        data = list({Point.rand_P() for _ in range(data_size)})
+        data_size = len(data)
 
-print(f"{"Istnieje" if found else "Nie istnieje"} kwadrat spelniajacy warunki zadania")
+        print(*data)
+        found = 0
+
+        for a in data:
+            for b in data:
+                if a == b:
+                    continue
+                if not Solution.can_form_sq(a, b):
+                    continue
+                if not Solution.exists_sq(a, b, data):
+                    continue
+                if not Solution.empty_sq(a, b, data):
+                    continue
+            
+                found = 1
+
+        print(f"{'Istnieje' if found else 'Nie istnieje'} kwadrat spelniajacy warunki zadania")
+
+Solution.main()
