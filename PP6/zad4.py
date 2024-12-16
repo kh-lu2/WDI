@@ -37,7 +37,7 @@ with open('M.txt', 'r') as file:
     m = int(file.readline())
 
 
-print("Format:\n M:  [iter]     [rec]      [rec+dict]")
+print("Format:\n M:  [  iter  ] [  rec   ] [rec+dict]")
 for i in range(1, m + 1):
     start, end = [], []
     for j in range(1, 4):
